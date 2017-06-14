@@ -1,0 +1,16 @@
+---
+layout: gallery
+---
+<!-- Thumbnail -->
+  <section id="thumbnails">
+    {% for file in site.static_files %}
+      {% if file.extname == ".jpg" and file.path contains page.gallery_name %}
+
+    <article>
+      <a class="thumbnail" href="{{ file.path }}" data-position="left center"><img src="{{ file.path }}" alt="" /></a>
+
+      <p>{{ file.path }} {{ file.name }}{{ site.image_root }}{{ page.gallery_name }}</p>
+    </article>
+      {% endif %}
+    {% endfor %}
+  </section>
